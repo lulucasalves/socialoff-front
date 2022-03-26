@@ -1,0 +1,11 @@
+.navigation {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+
+  svg {
+    cursor: pointer;
+    font-size: 30px;
+  }
+}
