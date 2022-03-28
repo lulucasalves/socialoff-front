@@ -1,0 +1,56 @@
+html {
+  @media (min-width: 1080px) {
+    font-size: 115%;
+
+    .container {
+      padding: 40px 45px 0 45px;
+
+      .menuContent {
+        padding: 0 45px !important;
+        width: 30% !important;
+      }
+
+      .navigation {
+        .logo {
+          margin-left: 30px;
+        }
+
+        .menuContent {
+          h3 {
+            padding-top: 50px;
+          }
+        }
+      }
+
+      .content {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+
+        .contentGroup {
+          margin-top: 20px;
+          display: block;
+        }
+
+        .divButton {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+        }
+
+        .principalForm {
+          margin-top: 40px;
+          width: 60%;
+        }
+
+        .tutorialDiv {
+          padding: 0 50px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -2,11 +2,21 @@
 @import 'themes/light';
 @import 'themes/dark';
 @import 'components';
+@import 'responsive/tablet';
+@import 'responsive/desktop';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 0.875rem;
+}
 
 body {
   background-color: var(--white);
   font-family: 'Inter', sans-serif;
   color: var(--black);
+  font-size: 14px;
 }
 
 a {
@@ -27,21 +37,6 @@ button {
   border: none;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 .container {
   padding: 40px 15px 0 15px;
-}
-
-html {
-  @media (max-width: 1080px) {
-    font-size: 93.75%;
-  }
-  @media (max-width: 720px) {
-    font-size: 87.5%;
-  }
 }

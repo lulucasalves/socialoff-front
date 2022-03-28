@@ -18,7 +18,7 @@
 
   svg {
     cursor: pointer;
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 
   .menu {
@@ -34,7 +34,7 @@
     .menuContent {
       background-color: var(--white);
       height: 100vh;
-      width: 65%;
+      width: 70%;
       z-index: 11;
       padding: 0 15px;
       animation: sendMenu;
@@ -48,7 +48,7 @@
       h3 {
         padding-top: 120px;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 1.25rem;
       }
 
       ul {
@@ -67,17 +67,32 @@
           transition: 0.3s;
           cursor: pointer;
           align-items: center;
-          font-size: 16px;
+          font-size: 1rem;
           display: flex;
 
           svg {
             position: inherit;
             margin: 0;
             margin-right: 10px;
-            font-size: 22px;
+            font-size: 1.375rem;
           }
         }
       }
     }
+  }
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+}
+
+.exitGroup {
+  display: flex;
+  align-items: center;
+
+  .logo {
+    margin-top: 40px;
+    margin-left: 60px !important;
   }
 }

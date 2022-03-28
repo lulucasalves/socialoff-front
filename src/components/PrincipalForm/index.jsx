@@ -23,7 +23,7 @@ import { sendFacebookContent } from '../../services/facebook/post'
 import { sendTiktokContent } from '../../services/tiktok/post'
 import { sendTwitterContent } from '../../services/twitter/post'
 
-export function PrincipalForm() {
+export function PrincipalForm(props) {
   const [brand, setBrand] = useState('youtube')
   const [url, setUrl] = useState('')
   const [loadingStatus, setLoadingStatus] = useState({
@@ -31,7 +31,6 @@ export function PrincipalForm() {
     message: ''
   })
   const [contentType, setContentType] = useState('')
-
 
   async function downloadLink(e) {
     e.preventDefault()
@@ -174,17 +173,33 @@ export function PrincipalForm() {
             )}
           </ChooseContent>
         </div>
-        <div className="pasteGroup">
-          <Label>Paste your URL</Label>
-          <InputPaste
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            placeholder={`https://${brand}.com/`}
-          />
-        </div>
-        <div className="divButton">
-          <Button type="submit">Download</Button>
-        </div>
+        {props.width <= 1080 ? (
+          <>
+            <div className="pasteGroup">
+              <Label>Paste your URL</Label>
+              <InputPaste
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder={`https://${brand}.com/`}
+              />
+            </div>
+            <div className="divButton">
+              <Button type="submit">Download</Button>
+            </div>
+          </>
+        ) : (
+          <div className="pasteGroup">
+            <Label>Paste your URL</Label>
+            <div className="inputButton">
+              <InputPaste
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder={`https://${brand}.com/`}
+              />
+              <Button type="submit">Download</Button>
+            </div>
+          </div>
+        )}
       </form>
       <div className="afterSubmit">
         {loadingStatus.loading ? (

@@ -12,28 +12,58 @@ import {
   FaYoutube
 } from 'react-icons/fa'
 import OnOutsiceClick from 'react-outclick'
+import { Theme } from '../Theme'
 
 export function Navigation(props) {
   const [modal, setModal] = useState(false)
 
   return (
     <nav {...props} className="navigation">
-      <HiMenuAlt2
-        onClick={() => {
-          setModal(true)
-        }}
-      />
-      <Logo />
+      {props.width <= 1080 ? (
+        <>
+          <HiMenuAlt2
+            onClick={() => {
+              setModal(true)
+            }}
+          />
+          <Logo />
+        </>
+      ) : (
+        <>
+          <div className="logoGroup">
+            <HiMenuAlt2
+              onClick={() => {
+                setModal(true)
+              }}
+            />
+            <Logo />
+          </div>
+          <div>
+            <Theme />
+          </div>
+        </>
+      )}
+
       {modal && (
         <div className="menu">
           <div className="menuContent">
-            {' '}
             <OnOutsiceClick onOutsideClick={() => setModal(false)}>
-              <IoMdClose
-                onClick={() => {
-                  setModal(false)
-                }}
-              />
+              {props.width <= 1080 ? (
+                <IoMdClose
+                  onClick={() => {
+                    setModal(false)
+                  }}
+                />
+              ) : (
+                <div className="exitGroup">
+                  <IoMdClose
+                    onClick={() => {
+                      setModal(false)
+                    }}
+                  />
+                  <Logo />
+                </div>
+              )}
               <h3>Baixe conteúdos do:</h3>
               <ul className="itemsList">
                 <li>

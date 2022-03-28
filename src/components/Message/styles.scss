@@ -35,8 +35,19 @@
 .messageGroup {
   display: flex;
   justify-content: center;
+  animation-name: showMessage;
+  animation-duration: 1s;
 
   p {
     line-height: 1.5;
+  }
+}
+
+@keyframes showMessage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

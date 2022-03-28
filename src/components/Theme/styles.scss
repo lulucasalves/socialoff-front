@@ -1,0 +1,96 @@
+.switchContainer {
+  svg {
+    font-size: 1.25rem;
+  }
+
+  label {
+    display: flex;
+    width: 70px;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  label i {
+    font-size: 18px;
+  }
+  label .sun {
+    color: #fff;
+    transition: 0.8s;
+  }
+  label .moon {
+    color: #000;
+    transition: 0.8s;
+  }
+  transla input:checked + label .sun {
+    transform: translateX(-43px);
+  }
+  input:checked + label .moon {
+    transform: translateX(43px);
+  }
+
+  label .sun {
+    opacity: 1;
+  }
+  input:checked + label .sun {
+    opacity: 0;
+  }
+
+  label .moon {
+    opacity: 0;
+  }
+  input:checked + label .moon {
+    opacity: 1;
+  }
+
+  label .ball {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    left: 5px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.8s;
+  }
+
+  input:checked + label .ball {
+    transform: translateX(40px);
+  }
+
+  label .moon {
+    transform: translateX(43px);
+  }
+  input:checked + label .moon {
+    transform: translateX(0);
+  }
+
+  label {
+    transition: 0.3s;
+  }
+  input:checked + label {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  input:checked + label .ball {
+    background: var(--black);
+  }
+  input {
+    display: none;
+  }
+
+  input:checked + label .sun {
+    transform: translateX(-43px) rotate(160deg);
+  }
+  label .moon {
+    transform: translateX(43px) rotate(250deg);
+  }
+  input:checked + label .moon {
+    transform: translateX(0), rotate(0);
+  }
+}
