@@ -6,7 +6,7 @@ import { LangProvider } from '../store/Translate'
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const htmlTag = document.documentElement
-    htmlTag.setAttribute('data-color', 'dark')
+    htmlTag.setAttribute('data-color', 'light')
   }, [])
 
   return (

@@ -5,19 +5,16 @@ import * as esMessages from '../languages/es-es.json'
 import * as ptMessages from '../languages/pt-br.json'
 
 const messages = {
-  'pt': ptMessages,
-  'en': enMessages,
-  'es': esMessages
+  pt: ptMessages,
+  en: enMessages,
+  es: esMessages
 }
 
 export function LangProvider({ children }) {
   const currentLang = 'pt'
 
   return (
-    <IntlProvider
-      locale={currentLang}
-      messages={messages[currentLang]}
-    >
+    <IntlProvider locale={currentLang} messages={messages[currentLang]}>
       {children}
     </IntlProvider>
   )

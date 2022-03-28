@@ -3,6 +3,8 @@ import { Navigation } from '../components/Navigation'
 import { Label } from '../components/Label'
 import { PrincipalForm } from '../components/PrincipalForm'
 import { LineDiv } from '../components/LineDiv'
+import { Tutorial } from '../components/Tutorial'
+import { Footer } from '../components/Footer'
 
 export default function Home() {
   return (
@@ -12,8 +14,9 @@ export default function Home() {
         Access your content completely <span>offline</span>
       </Title>
       <LineDiv />
-      <Label>Select platform from URL</Label>
       <PrincipalForm />
+      <Tutorial />
+      <Footer />
     </div>
   )
 }

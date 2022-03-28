@@ -1,3 +1,3 @@
-export function LineDiv() {
-  return <div className="line" />
+export function LineDiv(props) {
+  return <div {...props} className="line" />
 }

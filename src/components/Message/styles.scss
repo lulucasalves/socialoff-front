@@ -1,0 +1,42 @@
+.successMessage {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.errorMessage {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  p {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.infoMessage {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.messageGroup {
+  display: flex;
+  justify-content: center;
+
+  p {
+    line-height: 1.5;
+  }
+}
