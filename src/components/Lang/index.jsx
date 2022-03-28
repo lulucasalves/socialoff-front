@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl'
 
-export function Lang({ text }) {
+export function Lang({ children }) {
   const { formatMessage } = useIntl()
 
-  return formatMessage({ id: text })
+  return formatMessage({ id: children })
 }

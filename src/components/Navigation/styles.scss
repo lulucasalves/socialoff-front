@@ -14,7 +14,9 @@
   justify-content: space-between;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin: 30px 0;
+
+  padding: 0 15px;
 
   svg {
     cursor: pointer;
@@ -24,7 +26,7 @@
   .menu {
     overflow: hidden;
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
@@ -32,7 +34,7 @@
     background-color: rgba(0, 0, 0, 0.6);
 
     .menuContent {
-      background-color: var(--white);
+      background-color: var(--background);
       height: 100vh;
       width: 70%;
       z-index: 11;
@@ -46,7 +48,7 @@
       }
 
       h3 {
-        padding-top: 120px;
+        padding-top: 50px;
         font-weight: 600;
         font-size: 1.25rem;
       }
@@ -64,7 +66,7 @@
             color: var(--primary);
           }
 
-          transition: 0.3s;
+          transition: 0.2s;
           cursor: pointer;
           align-items: center;
           font-size: 1rem;
@@ -94,5 +96,34 @@
   .logo {
     margin-top: 40px;
     margin-left: 60px !important;
+  }
+}
+
+.configs {
+  padding-top: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  svg {
+    margin-top: 0 !important;
+    position: inherit !important;
+  }
+
+  .langDiv {
+    margin-right: 0px !important;
+    margin-top: 20px;
+  }
+
+  ul {
+    padding: 0 !important;
+
+    li {
+      font-size: 0.875rem !important;
+
+      &:hover {
+        color: var(--text-color) !important;
+      }
+    }
   }
 }

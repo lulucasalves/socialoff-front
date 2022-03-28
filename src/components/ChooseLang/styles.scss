@@ -1,0 +1,73 @@
+.langGroup {
+  z-index: 100;
+  position: relative;
+  .langDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    width: 60px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-right: 30px;
+    cursor: pointer;
+    background: var(--background);
+
+    p {
+      font-size: 0.875rem;
+    }
+
+    svg {
+      margin-left: 2px;
+      font-size: 1.125rem;
+    }
+  }
+
+  .langModal {
+    background: var(--background);
+    top: 65px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    animation-name: langs;
+    animation-duration: 0.5s;
+
+    li {
+      cursor: pointer;
+      padding: 5px 21px;
+      border: 1px solid var(--border-color);
+      font-size: 0.875rem;
+
+      &:first-child {
+        border-radius: 8px 8px 0 0;
+        border-bottom: none;
+      }
+
+      &:last-child {
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+      }
+
+      &:hover {
+        background: var(--muted);
+      }
+    }
+
+    .activeOption {
+      background: var(--muted);
+    }
+  }
+}
+
+@keyframes langs {
+  from {
+    top: 100px;
+    opacity: 0;
+  }
+
+  to {
+    top: 65px;
+    opacity: 1;
+  }
+}

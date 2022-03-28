@@ -2,13 +2,18 @@ html {
   @media (min-width: 720px) {
     font-size: 106.5%;
 
-    .container {
-      padding: 40px 25px 0 25px;
+    .menuContent {
+      padding: 0 25px !important;
+      width: 50% !important;
+    }
 
-      .menuContent {
-        padding: 0 25px !important;
-        width: 50% !important;
-      }
+    .navigation {
+      padding: 0 25px;
+      margin-top: 40px;
+    }
+
+    .content {
+      padding: 40px 25px 0 25px;
     }
   }
 }

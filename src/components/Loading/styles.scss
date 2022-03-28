@@ -6,12 +6,12 @@
   align-items: center;
 
   p {
-    color: var(--black);
+    color: var(--text-color);
     margin-bottom: 40px;
   }
 
   .loader {
-    color: var(--primary-unsaturate);
+    color: var(--primary);
     font-size: 2.5rem;
     text-indent: -9999em;
     overflow: hidden;

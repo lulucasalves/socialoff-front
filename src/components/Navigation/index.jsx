@@ -3,6 +3,7 @@ import { HiMenuAlt2 } from 'react-icons/hi'
 import { IoMdClose } from 'react-icons/io'
 import { useState } from 'react'
 import { LineDiv } from '../LineDiv'
+import { ChooseLang } from '../ChooseLang'
 import {
   FaFacebook,
   FaInstagram,
@@ -13,6 +14,8 @@ import {
 } from 'react-icons/fa'
 import OnOutsiceClick from 'react-outclick'
 import { Theme } from '../Theme'
+import { Lang } from '../Lang'
+import Link from 'next/link'
 
 export function Navigation(props) {
   const [modal, setModal] = useState(false)
@@ -38,7 +41,8 @@ export function Navigation(props) {
             />
             <Logo />
           </div>
-          <div>
+          <div className="configs">
+            <ChooseLang />
             <Theme />
           </div>
         </>
@@ -49,11 +53,17 @@ export function Navigation(props) {
           <div className="menuContent">
             <OnOutsiceClick onOutsideClick={() => setModal(false)}>
               {props.width <= 1080 ? (
-                <IoMdClose
-                  onClick={() => {
-                    setModal(false)
-                  }}
-                />
+                <>
+                  <IoMdClose
+                    onClick={() => {
+                      setModal(false)
+                    }}
+                  />
+                  <div className="configs">
+                    <Theme />
+                    <ChooseLang />
+                  </div>
+                </>
               ) : (
                 <div className="exitGroup">
                   <IoMdClose
@@ -64,37 +74,51 @@ export function Navigation(props) {
                   <Logo />
                 </div>
               )}
-              <h3>Baixe conteúdos do:</h3>
+              <h3>
+                <Lang>menu</Lang>
+              </h3>
               <ul className="itemsList">
-                <li>
-                  <FaInstagram />
-                  Instagram
-                </li>
+                <Link href="/instagram">
+                  <li>
+                    <FaInstagram />
+                    Instagram
+                  </li>
+                </Link>
                 <LineDiv />
-                <li>
-                  <FaYoutube />
-                  Youtube
-                </li>
+                <Link href="/youtube">
+                  <li>
+                    <FaYoutube />
+                    Youtube
+                  </li>
+                </Link>
                 <LineDiv />
-                <li>
-                  <FaLinkedinIn />
-                  Linkedin
-                </li>
+                <Link href="/linkedin">
+                  <li>
+                    <FaLinkedinIn />
+                    Linkedin
+                  </li>
+                </Link>
                 <LineDiv />
-                <li>
-                  <FaTiktok />
-                  TikTok
-                </li>
+                <Link href="/tiktok">
+                  <li>
+                    <FaTiktok />
+                    TikTok
+                  </li>
+                </Link>
                 <LineDiv />
-                <li>
-                  <FaFacebook />
-                  Facebook
-                </li>
+                <Link href="/facebook">
+                  <li>
+                    <FaFacebook />
+                    Facebook
+                  </li>
+                </Link>
                 <LineDiv />
-                <li>
-                  <FaTwitter />
-                  Twitter
-                </li>
+                <Link href="/twitter">
+                  <li>
+                    <FaTwitter />
+                    Twitter
+                  </li>
+                </Link>
               </ul>
             </OnOutsiceClick>
           </div>

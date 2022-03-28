@@ -1,1 +1,20 @@
-{ "test": "Hi" }
+{
+  "title-1": "Access your content completely",
+  "title-2": "Download videos from",
+  "menu": "Download content from:",
+  "label-1": "Select platform from URL",
+  "label-2": "Choose type of content",
+  "label-3": "Paste your URL",
+  "info": "Enter the desired content link",
+  "success": "Content successfully downloaded!",
+  "error-1": "Error!",
+  "error-2": "Check that the link sent is correct and that your content is public.",
+  "error-3": "After correcting the information, please try again!",
+  "tutorial-1": "How to download your content on SocialOff",
+  "tutorial-2": "1 - Copy the url of the content",
+  "tutorial-3": "2 - Paste the url in SocialOff",
+  "tutorial-4": "3 - Download",
+  "owner": "Made by Lucas Alves",
+  "option-1": "Select an option",
+  "option-2": "Video"
+}

@@ -13,10 +13,10 @@
 }
 
 body {
-  background-color: var(--white);
+  background-color: var(--background);
   font-family: 'Inter', sans-serif;
-  color: var(--black);
-  font-size: 14px;
+  color: var(--text-color);
+  font-size: 0.875rem;
 }
 
 a {
@@ -37,6 +37,6 @@ button {
   border: none;
 }
 
-.container {
+.content {
   padding: 40px 15px 0 15px;
 }

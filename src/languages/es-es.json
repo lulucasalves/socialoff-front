@@ -1,1 +1,20 @@
-{ "test": "Holla" }
+{
+  "title-1": "Accede a tu contenido por completo",
+  "title-2": "Descargar videos de",
+  "menu": "Descargar contenidos de:",
+  "label-1": "Selecciona la plataforma de acuerdo a la URL",
+  "label-2": "Elegir tipo de contenido",
+  "label-3": "Pega tu URL",
+  "info": "Ingrese el enlace del contenido deseado",
+  "success": "¡Contenido descargado correctamente!",
+  "error-1": "¡Error!",
+  "error-2": "Comprueba que el enlace enviado sea correcto y que su contenido sea público.",
+  "error-3": "¡Después de corregir la información, inténtalo de nuevo!",
+  "tutorial-1": "Cómo descargar tu contenido en SocialOff",
+  "tutorial-2": "1 - Copiar la URL del contenido",
+  "tutorial-3": "2 - Pega la url en SocialOff",
+  "tutorial-4": "3 - Descargar",
+  "owner": "Hecho por Lucas Alves",
+  "option-1": "Selecciona una opción",
+  "option-2": "Vídeo"
+}

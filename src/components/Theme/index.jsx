@@ -5,7 +5,6 @@ import { MyContext } from '../../store/Config'
 export function Theme() {
   const { theme, changeTheme } = useContext(MyContext)
   let themeType = theme === 'light' ? 'dark' : 'light'
-  console.log(themeType)
 
   return (
     <div className="switchContainer">
@@ -14,10 +13,10 @@ export function Theme() {
           changeTheme(themeType)
         }}
         type="checkbox"
-        checked={theme === 'dark'}
+        defaultChecked={theme === 'dark'}
         id="switch"
       />
-      <label for="switch">
+      <label htmlFor="switch">
         <BiMoon className="moon" />
         <BiSun className="sun" />
         <span className="ball"></span>

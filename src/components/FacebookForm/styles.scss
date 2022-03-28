@@ -1,0 +1,51 @@
+.options {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+}
+
+.pasteGroup {
+  margin-top: 20px;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+
+  input {
+    margin-top: 10px;
+  }
+}
+
+.afterSubmit {
+  margin-top: 30px;
+}
+
+.contentGroup {
+  margin-top: 20px;
+  display: block;
+}
+
+.divButton {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.principalForm {
+  margin-top: 40px;
+}
+
+.inputButton {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-top: 10px;
+  }
+}

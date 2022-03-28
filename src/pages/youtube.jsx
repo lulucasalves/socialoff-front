@@ -1,14 +1,14 @@
 import { Title } from '../components/Title'
 import { Navigation } from '../components/Navigation'
-import { PrincipalForm } from '../components/PrincipalForm'
 import { LineDiv } from '../components/LineDiv'
 import { Tutorial } from '../components/Tutorial'
 import { Footer } from '../components/Footer'
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Lang } from '../components/Lang'
+import { YoutubeForm } from '../components/YoutubeForm'
 
-export default function Home() {
+export default function Youtube() {
   const [width, setWidth] = useState(100)
 
   const updateDimensions = () => {
@@ -24,15 +24,15 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>SocialOff</title>
+        <title>SocialOff | Youtube</title>
       </Head>
       <Navigation width={width} />
       <div className="content">
         <Title>
-          <Lang>title-1</Lang> <span>offline</span>
+          <Lang>title-2</Lang> <span>Youtube</span>
         </Title>
         <LineDiv />
-        <PrincipalForm width={width} />
+        <YoutubeForm width={width} />
         <Tutorial />
       </div>
       <Footer />

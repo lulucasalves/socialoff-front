@@ -1,7 +1,12 @@
 .button {
   padding: 10px;
-  background-color: var(--primary-unsaturate);
+  background-color: var(--primary);
   border-radius: 5px;
-  color: var(--white);
+  color: #fff;
   font-weight: 500;
+  transition: 0.3s;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
 }

@@ -22,6 +22,8 @@ import { sendInstagramContent } from '../../services/instagram/post'
 import { sendFacebookContent } from '../../services/facebook/post'
 import { sendTiktokContent } from '../../services/tiktok/post'
 import { sendTwitterContent } from '../../services/twitter/post'
+import { Lang } from '../Lang'
+import { useIntl } from 'react-intl'
 
 export function PrincipalForm(props) {
   const [brand, setBrand] = useState('youtube')
@@ -31,6 +33,8 @@ export function PrincipalForm(props) {
     message: ''
   })
   const [contentType, setContentType] = useState('')
+
+  const { formatMessage } = useIntl()
 
   async function downloadLink(e) {
     e.preventDefault()
@@ -104,7 +108,7 @@ export function PrincipalForm(props) {
   return (
     <>
       <form onSubmit={downloadLink} className="principalForm">
-        <Label>Select platform from URL</Label>
+        <Label>label-1</Label>
         <div className="options">
           <Option
             active={brand === 'youtube' ? 1 : 0}
@@ -154,7 +158,7 @@ export function PrincipalForm(props) {
           </Option>
         </div>
         <div className="contentGroup">
-          <Label>Choose type of content</Label>
+          <Label>label-2</Label>
           <ChooseContent
             value={contentType}
             disabled={
@@ -162,10 +166,10 @@ export function PrincipalForm(props) {
             }
             onChange={(e) => setContentType(e.target.value)}
           >
-            <option disabled selected value="">
-              Select an option
+            <option disabled value="">
+              {formatMessage({ id: 'option-1' })}
             </option>
-            <option value="video">Video</option>
+            <option value="video">{formatMessage({ id: 'option-2' })}</option>
             {brand === 'linkedin' ? (
               <option value="post">Post</option>
             ) : (
@@ -176,7 +180,7 @@ export function PrincipalForm(props) {
         {props.width <= 1080 ? (
           <>
             <div className="pasteGroup">
-              <Label>Paste your URL</Label>
+              <Label>label-3</Label>
               <InputPaste
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
@@ -189,7 +193,7 @@ export function PrincipalForm(props) {
           </>
         ) : (
           <div className="pasteGroup">
-            <Label>Paste your URL</Label>
+            <Label>label-3</Label>
             <div className="inputButton">
               <InputPaste
                 value={url}

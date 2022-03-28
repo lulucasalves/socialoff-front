@@ -1,7 +1,9 @@
+import { Lang } from '../Lang'
+
 export function Label(props) {
   return (
     <label {...props} className="defaultLabel">
-      {props.children}
+      <Lang>{props.children}</Lang>
     </label>
   )
 }

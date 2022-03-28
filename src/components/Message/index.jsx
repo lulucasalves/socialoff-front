@@ -1,18 +1,27 @@
+import { Lang } from '../Lang'
+
 export function Message(props) {
   return (
     <div className="messageGroup">
       {props.message === '' ? (
-        <p className="infoMessage">Insira o link do conteúdo desejado</p>
+        <p className="infoMessage">
+          <Lang>info</Lang>
+        </p>
       ) : props.message === 'success' ? (
-        <p className="successMessage">Conteúdo baixado com sucesso!</p>
+        <p className="successMessage">
+          <Lang>success</Lang>
+        </p>
       ) : (
         <div className="errorMessage">
-          <p>Erro!</p>
           <p>
-            Verifique se o link enviado está correto e se o seu conteúdo é
-            publico.
+            <Lang>error-1</Lang>
           </p>
-          <p> Após corrigir as informações, por favor tente novamente!</p>
+          <p>
+            <Lang>error-2</Lang>
+          </p>
+          <p>
+            <Lang>error-3</Lang>
+          </p>
         </div>
       )}
     </div>

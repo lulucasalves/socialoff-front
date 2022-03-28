@@ -1,10 +1,13 @@
+import { Lang } from '../Lang'
 import { LineDiv } from '../LineDiv'
 
 export function Footer(props) {
   return (
     <>
       <LineDiv />
-      <p className="owner" >Made by Lucas Alves</p>
+      <p className="owner">
+        <Lang>owner</Lang>
+      </p>
     </>
   )
 }

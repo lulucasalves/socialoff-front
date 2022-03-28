@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 6px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 50px;
     cursor: pointer;
     position: relative;
@@ -24,7 +24,7 @@
     transition: 0.8s;
   }
   label .moon {
-    color: #000;
+    color: #fff;
     transition: 0.8s;
   }
   transla input:checked + label .sun {
@@ -75,10 +75,10 @@
     transition: 0.3s;
   }
   input:checked + label {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.4);
   }
   input:checked + label .ball {
-    background: var(--black);
+    background: var(--text-color);
   }
   input {
     display: none;
