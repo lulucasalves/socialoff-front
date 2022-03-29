@@ -15,10 +15,16 @@ export function InstagramForm(props) {
 
   async function downloadLink(e) {
     e.preventDefault()
+    if (url) {
+      setLoadingStatus({
+        loading: true,
+        message: ''
+      })
 
-    await sendInstagramContent({ url })
-      .then((res) => setLoadingStatus({ message: res, loading: false }))
-      .catch((res) => setLoadingStatus({ message: res, loading: false }))
+      await sendInstagramContent({ url })
+        .then((res) => setLoadingStatus({ message: res, loading: false }))
+        .catch((res) => setLoadingStatus({ message: res, loading: false }))
+    }
   }
 
   return (

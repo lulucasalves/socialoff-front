@@ -113,6 +113,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'youtube' ? 1 : 0}
             onClick={() => {
+              setContentType('')
               setBrand('youtube')
             }}
           >
@@ -121,6 +122,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'tiktok' ? 1 : 0}
             onClick={() => {
+              setContentType('')
               setBrand('tiktok')
             }}
           >
@@ -129,6 +131,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'instagram' ? 1 : 0}
             onClick={() => {
+              setContentType('')
               setBrand('instagram')
             }}
           >
@@ -136,13 +139,17 @@ export function PrincipalForm(props) {
           </Option>
           <Option
             active={brand === 'twitter' ? 1 : 0}
-            onClick={() => setBrand('twitter')}
+            onClick={() => {
+              setContentType('')
+              setBrand('twitter')
+            }}
           >
             <FaTwitter />
           </Option>
           <Option
             active={brand === 'facebook' ? 1 : 0}
             onClick={() => {
+              setContentType('')
               setBrand('facebook')
             }}
           >
@@ -151,6 +158,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'linkedin' ? 1 : 0}
             onClick={() => {
+              setContentType('')
               setBrand('linkedin')
             }}
           >
@@ -188,7 +196,9 @@ export function PrincipalForm(props) {
               />
             </div>
             <div className="divButton">
-              <Button type="submit">Download</Button>
+              <Button readOnly={loadingStatus.loading} type="submit">
+                Download
+              </Button>
             </div>
           </>
         ) : (
@@ -200,7 +210,9 @@ export function PrincipalForm(props) {
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder={`https://${brand}.com/`}
               />
-              <Button type="submit">Download</Button>
+              <Button readOnly={loadingStatus.loading} type="submit">
+                Download
+              </Button>
             </div>
           </div>
         )}

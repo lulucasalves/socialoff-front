@@ -15,10 +15,16 @@ export function TwitterForm(props) {
 
   async function downloadLink(e) {
     e.preventDefault()
+    if (url) {
+      setLoadingStatus({
+        loading: true,
+        message: ''
+      })
 
-    await sendTwitterContent({ url })
-      .then((res) => setLoadingStatus({ message: res, loading: false }))
-      .catch((res) => setLoadingStatus({ message: res, loading: false }))
+      await sendTwitterContent({ url })
+        .then((res) => setLoadingStatus({ message: res, loading: false }))
+        .catch((res) => setLoadingStatus({ message: res, loading: false }))
+    }
   }
 
   return (

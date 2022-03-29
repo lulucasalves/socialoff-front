@@ -1,3 +1,4 @@
+import { downloadContent } from '../../utils/downloadContent'
 import { api } from '../api'
 
 export function sendFacebookContent(values) {
@@ -12,7 +13,7 @@ export function sendFacebookContent(values) {
           const data = res.data.link
           if (res.status === 200 || res.status === 201) {
             resolve('success')
-            window.open(data, '_blank')
+            downloadContent(data)
           } else {
             reject('error')
           }

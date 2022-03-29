@@ -15,8 +15,8 @@ export default function Instagram() {
     setWidth(window.innerWidth)
   }
 
-  useEffect(() => {    updateDimensions()
-
+  useEffect(() => {
+    updateDimensions()
     window.addEventListener('resize', updateDimensions)
     return () => window.removeEventListener('resize', updateDimensions)
   }, [])

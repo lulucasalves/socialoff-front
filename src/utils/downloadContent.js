@@ -26,6 +26,6 @@ export function downloadContent(url) {
           link.click()
           document.body.removeChild(link)
         })
-        .catch(() => alert(url))
+        .catch(() => window.open(url, '_blank'))
     })
 }

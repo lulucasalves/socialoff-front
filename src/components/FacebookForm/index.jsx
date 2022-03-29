@@ -15,10 +15,16 @@ export function FacebookForm(props) {
 
   async function downloadLink(e) {
     e.preventDefault()
+    if (url) {
+      setLoadingStatus({
+        loading: true,
+        message: ''
+      })
 
-    await sendFacebookContent({ url })
-      .then((res) => setLoadingStatus({ message: res, loading: false }))
-      .catch((res) => setLoadingStatus({ message: res, loading: false }))
+      await sendFacebookContent({ url })
+        .then((res) => setLoadingStatus({ message: res, loading: false }))
+        .catch((res) => setLoadingStatus({ message: res, loading: false }))
+    }
   }
 
   return (
