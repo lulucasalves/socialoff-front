@@ -5,6 +5,8 @@ import { InputPaste } from '../InputPaste'
 import { Message } from '../Message'
 import { Label } from '../Label'
 import { sendInstagramContent } from '../../services/instagram/post'
+import { ChooseContent } from '../ChooseContent'
+import { useIntl } from 'react-intl'
 
 export function InstagramForm(props) {
   const [url, setUrl] = useState('')
@@ -27,9 +29,19 @@ export function InstagramForm(props) {
     }
   }
 
+  const { formatMessage } = useIntl()
+
   return (
     <>
       <form onSubmit={downloadLink} className="principalForm">
+        <div className="contentGroup">
+          <Label>label-2</Label>
+          <ChooseContent>
+            <option value="video">
+              {formatMessage({ id: 'option' })} / Post
+            </option>
+          </ChooseContent>
+        </div>
         {props.width <= 1080 ? (
           <>
             <div className="pasteGroup">

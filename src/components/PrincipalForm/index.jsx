@@ -36,10 +36,45 @@ export function PrincipalForm(props) {
 
   const { formatMessage } = useIntl()
 
+  function appearOptions() {
+    if (
+      brand === 'linkedin' ||
+      brand === 'youtube' ||
+      brand === 'twitter' ||
+      brand === 'facebook'
+    ) {
+      if (brand === 'linkedin') {
+        return (
+          <>
+            <option value="video">{formatMessage({ id: 'option' })}</option>
+            <option value="post">Post</option>
+          </>
+        )
+      }
+      if (brand === 'youtube') {
+        return (
+          <>
+            <option value="video">{formatMessage({ id: 'option' })}</option>
+            <option value="thumbnail">Thumbnail</option>
+          </>
+        )
+      }
+      if (brand === 'twitter' || brand === 'facebook') {
+        return <option value="video">{formatMessage({ id: 'option' })}</option>
+      }
+    }
+
+    return (
+      <option value="videoPost">
+        {formatMessage({ id: 'option' })} / Post
+      </option>
+    )
+  }
+
   async function downloadLink(e) {
     e.preventDefault()
 
-    if (url) {
+    if (url && !loadingStatus.loadingStatus) {
       setLoadingStatus({
         loading: true,
         message: ''
@@ -86,7 +121,9 @@ export function PrincipalForm(props) {
 
         case 'facebook':
           await sendFacebookContent({ url })
-            .then((res) => setLoadingStatus({ message: res, loading: false }))
+            .then((res) =>
+              setLoadingStatus({ melinkedinssage: res, loading: false })
+            )
             .catch((res) => setLoadingStatus({ message: res, loading: false }))
           break
 
@@ -113,7 +150,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'youtube' ? 1 : 0}
             onClick={() => {
-              setContentType('')
+              setContentType('video')
               setBrand('youtube')
             }}
           >
@@ -122,7 +159,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'tiktok' ? 1 : 0}
             onClick={() => {
-              setContentType('')
+              setContentType('videoPost')
               setBrand('tiktok')
             }}
           >
@@ -131,7 +168,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'instagram' ? 1 : 0}
             onClick={() => {
-              setContentType('')
+              setContentType('videoPost')
               setBrand('instagram')
             }}
           >
@@ -140,7 +177,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'twitter' ? 1 : 0}
             onClick={() => {
-              setContentType('')
+              setContentType('video')
               setBrand('twitter')
             }}
           >
@@ -149,7 +186,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'facebook' ? 1 : 0}
             onClick={() => {
-              setContentType('')
+              setContentType('videoPost')
               setBrand('facebook')
             }}
           >
@@ -158,7 +195,7 @@ export function PrincipalForm(props) {
           <Option
             active={brand === 'linkedin' ? 1 : 0}
             onClick={() => {
-              setContentType('')
+              setContentType('video')
               setBrand('linkedin')
             }}
           >
@@ -169,20 +206,9 @@ export function PrincipalForm(props) {
           <Label>label-2</Label>
           <ChooseContent
             value={contentType}
-            disabled={
-              brand === 'linkedin' || brand === 'youtube' ? false : true
-            }
             onChange={(e) => setContentType(e.target.value)}
           >
-            <option disabled value="">
-              {formatMessage({ id: 'option-1' })}
-            </option>
-            <option value="video">{formatMessage({ id: 'option-2' })}</option>
-            {brand === 'linkedin' ? (
-              <option value="post">Post</option>
-            ) : (
-              <option value="thumbnail">Thumbnail</option>
-            )}
+            {appearOptions()}
           </ChooseContent>
         </div>
         {props.width <= 1080 ? (
@@ -196,9 +222,7 @@ export function PrincipalForm(props) {
               />
             </div>
             <div className="divButton">
-              <Button readOnly={loadingStatus.loading} type="submit">
-                Download
-              </Button>
+              <Button type="submit">Download</Button>
             </div>
           </>
         ) : (

@@ -13,7 +13,8 @@ export function sendFacebookContent(values) {
           const data = res.data.link
           if (res.status === 200 || res.status === 201) {
             resolve('success')
-            downloadContent(data)
+
+            window.open(data, '_blank')
           } else {
             reject('error')
           }

@@ -49,10 +49,7 @@ export function LinkedinForm(props) {
             value={contentType}
             onChange={(e) => setContentType(e.target.value)}
           >
-            <option disabled value="">
-              {formatMessage({ id: 'option-1' })}
-            </option>
-            <option value="video">{formatMessage({ id: 'option-2' })}</option>
+            <option value="video">{formatMessage({ id: 'option' })}</option>
             <option value="post">Post</option>
           </ChooseContent>
         </div>

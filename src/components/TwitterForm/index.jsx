@@ -5,6 +5,8 @@ import { InputPaste } from '../InputPaste'
 import { Message } from '../Message'
 import { Label } from '../Label'
 import { sendTwitterContent } from '../../services/twitter/post'
+import { useIntl } from 'react-intl'
+import { ChooseContent } from '../ChooseContent'
 
 export function TwitterForm(props) {
   const [url, setUrl] = useState('')
@@ -27,8 +29,16 @@ export function TwitterForm(props) {
     }
   }
 
+  const { formatMessage } = useIntl()
+
   return (
     <>
+      <div className="contentGroup">
+        <Label>label-2</Label>
+        <ChooseContent>
+          <option value="video">{formatMessage({ id: 'option' })}</option>
+        </ChooseContent>
+      </div>
       <form onSubmit={downloadLink} className="principalForm">
         {props.width <= 1080 ? (
           <>

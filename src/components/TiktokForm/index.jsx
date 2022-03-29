@@ -5,6 +5,8 @@ import { InputPaste } from '../InputPaste'
 import { Message } from '../Message'
 import { Label } from '../Label'
 import { sendTiktokContent } from '../../services/tiktok/post'
+import { useIntl } from 'react-intl'
+import { ChooseContent } from '../ChooseContent'
 
 export function TiktokForm(props) {
   const [url, setUrl] = useState('')
@@ -27,9 +29,19 @@ export function TiktokForm(props) {
     }
   }
 
+  const { formatMessage } = useIntl()
+
   return (
     <>
       <form onSubmit={downloadLink} className="principalForm">
+        <div className="contentGroup">
+          <Label>label-2</Label>
+          <ChooseContent>
+            <option value="video">
+              {formatMessage({ id: 'option' })} / Post
+            </option>
+          </ChooseContent>
+        </div>
         {props.width <= 1080 ? (
           <>
             <div className="pasteGroup">
