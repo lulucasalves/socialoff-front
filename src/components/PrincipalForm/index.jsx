@@ -74,7 +74,7 @@ export function PrincipalForm(props) {
   async function downloadLink(e) {
     e.preventDefault()
 
-    if (url && !loadingStatus.loadingStatus) {
+    if (url && !loadingStatus.loading) {
       setLoadingStatus({
         loading: true,
         message: ''

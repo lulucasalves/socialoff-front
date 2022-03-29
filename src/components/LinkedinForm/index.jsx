@@ -22,7 +22,7 @@ export function LinkedinForm(props) {
   async function downloadLink(e) {
     e.preventDefault()
 
-    if (url) {
+    if (url && !loadingStatus.loading) {
       setLoadingStatus({
         loading: true,
         message: ''
