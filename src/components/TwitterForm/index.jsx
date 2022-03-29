@@ -33,13 +33,13 @@ export function TwitterForm(props) {
 
   return (
     <>
-      <div className="contentGroup">
-        <Label>label-2</Label>
-        <ChooseContent>
-          <option value="video">{formatMessage({ id: 'option' })}</option>
-        </ChooseContent>
-      </div>
       <form onSubmit={downloadLink} className="principalForm">
+        <div className="contentGroup">
+          <Label>label-2</Label>
+          <ChooseContent>
+            <option value="video">{formatMessage({ id: 'option' })}</option>
+          </ChooseContent>
+        </div>
         {props.width <= 1080 ? (
           <>
             <div className="pasteGroup">
