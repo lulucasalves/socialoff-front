@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: socialoff
+    build: .
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
