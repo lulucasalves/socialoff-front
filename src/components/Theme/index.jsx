@@ -16,7 +16,7 @@ export function Theme() {
         defaultChecked={theme === 'dark'}
         id="switch"
       />
-      <label htmlFor="switch">
+      <label htmlFor="switch" checked>
         <BiMoon className="moon" />
         <BiSun className="sun" />
         <span className="ball"></span>

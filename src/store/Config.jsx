@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from 'react'
 export const MyContext = createContext({})
 
 export function Provider(props) {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
   const [lang, setLang] = useState('en')
 
   function changeTheme(type) {
